@@ -111,6 +111,7 @@ public enum AEFeature {
     IntegrationLogging(Constants.CATEGORY_MISC, false),
     WebsiteRecipes(Constants.CATEGORY_MISC, false),
     LogSecurityAudits(Constants.CATEGORY_MISC, false),
+    DisableSecurityChecks(Constants.CATEGORY_MISC, true),
     Achievements(Constants.CATEGORY_MISC),
     UpdateLogging(Constants.CATEGORY_MISC, false),
     PacketLogging(Constants.CATEGORY_MISC, false),
