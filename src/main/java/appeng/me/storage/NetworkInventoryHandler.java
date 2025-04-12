@@ -210,7 +210,7 @@ public class NetworkInventoryHandler<T extends IAEStack<T>> implements IMEInvent
 
     private boolean testPermission(final BaseActionSource src, final SecurityPermissions permission) {
         if (AEConfig.instance.isFeatureEnabled(AEFeature.DisableSecurityPermissionChecks)) {
-            return true;
+            return false;
         }
 
         if (src.isPlayer()) {
