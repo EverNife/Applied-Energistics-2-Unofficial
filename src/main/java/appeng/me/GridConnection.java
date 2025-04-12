@@ -52,7 +52,7 @@ public class GridConnection implements IGridConnection, IPathItem {
         final GridNode a = (GridNode) aNode;
         final GridNode b = (GridNode) bNode;
 
-        if (!AEConfig.instance.isFeatureEnabled(AEFeature.DisableSecurityChecks) && Platform.securityCheck(a, b)) {
+        if (!AEConfig.instance.isFeatureEnabled(AEFeature.DisableSecurityBlockChecks) && Platform.securityCheck(a, b)) {
             if (AEConfig.instance.isFeatureEnabled(AEFeature.LogSecurityAudits)) {
                 final DimensionalCoord aCoordinates = a.getGridBlock().getLocation();
                 final DimensionalCoord bCoordinates = b.getGridBlock().getLocation();

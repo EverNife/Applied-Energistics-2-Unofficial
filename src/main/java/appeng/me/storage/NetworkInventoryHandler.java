@@ -29,6 +29,8 @@ import appeng.api.storage.IMEInventoryHandler;
 import appeng.api.storage.StorageChannel;
 import appeng.api.storage.data.IAEStack;
 import appeng.api.storage.data.IItemList;
+import appeng.core.AEConfig;
+import appeng.core.features.AEFeature;
 import appeng.me.cache.SecurityCache;
 import appeng.util.SortedArrayList;
 
@@ -207,6 +209,10 @@ public class NetworkInventoryHandler<T extends IAEStack<T>> implements IMEInvent
     }
 
     private boolean testPermission(final BaseActionSource src, final SecurityPermissions permission) {
+        if (AEConfig.instance.isFeatureEnabled(AEFeature.DisableSecurityPermissionChecks)) {
+            return true;
+        }
+
         if (src.isPlayer()) {
             if (!this.security.hasPermission(((PlayerSource) src).player, permission)) {
                 return true;
